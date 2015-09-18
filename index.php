@@ -75,6 +75,7 @@
 			<?php for($i=0;$i<4;$i++){ ?>
 			<div class="col-xs-3">
 				<div class="product-child">
+					<div class="label-promotion"></div>
 					<div class="product-label label-new"></div>
 					<figure class="product-child-img">
 						<img src="images/sampleproduct.jpg" alt="productname">

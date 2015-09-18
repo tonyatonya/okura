@@ -425,6 +425,9 @@ footer{
 		margin: 0;
 		padding: 0;
 		li{
+			width: 40%;
+			margin-right: 2%;
+			float: left;
 			font-family: 'Lato';
 			font-weight: lighter;
 			color: #cdcfd0;	
@@ -676,6 +679,15 @@ footer{
 				background-image: url(../images/newlabel.png);
 			}
 		}
+		.label-promotion{
+			position: absolute;
+			z-index: 2;
+			left: 0;
+			top:0;
+			width: 67px;
+			height: 67px;
+			background-image: url(../images/promotionLabel.png);
+		}
 		.price{
 			width: 100%;
 			height: 150px;
@@ -766,6 +778,26 @@ footer{
 				}
 			}
 		}
+		.promotionPrice{
+			font-size: 25px;
+			color: black;
+			text-transform: uppercase;
+			position: absolute;
+			font-weight: bold;
+			width: 100%;
+			top:-40px;
+			right: 0;
+			padding: 3px;
+			background-color: red;
+			color: white;
+		}
+		&.hasPromotion{
+			.price{
+				p{
+					text-decoration: line-through;
+				}
+			}
+		}
 		&:hover{
 			.btn-holder{
 				opacity: 1;
@@ -791,6 +823,7 @@ footer{
 .sale-slogan{
 	display: table;
 	height: 165px;
+	width: 100%;
 	padding-left: 15px;
 	padding-right: 15px;
 	margin-top: 15px;
@@ -1860,14 +1893,23 @@ fieldset{
 				td{
 					position: relative;
 					&:first-child{
-						width: 215px;
-						height: 120px;
+						width: 200px;
 					}
 					.user-img{
+						cursor: pointer;
 						position: absolute;
 						bottom: 0;
+						left: 0;
 						padding: 7px;
 						z-index: 2;
+						width: 180px;
+						height: 180px;
+						background-size: cover;
+						-webkit-backgroun-size:cover;
+						-moz-background-size: cover;
+						-o-background-size: cover;
+						background-repeat: no-repeat;
+						background-position: center center;
 						img{
 							width: 180px;
 							height: auto;
@@ -1879,6 +1921,32 @@ fieldset{
 		}
 	}
 }
+
+.dashboard{
+	.userprofile{
+		&.topsection{
+			margin-top: 0;
+			table{
+				tr{
+					td{
+						&:first-child{
+							width: 180px;
+							height: 180px;
+						}
+						.user-img{
+							cursor:hand;
+							position: relative;
+							bottom: 0;
+							padding: 7px;
+							z-index: 2;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 h2{
 	&.title-bar{
 		width: 100%;
@@ -2356,7 +2424,7 @@ table.checkout-sum{
 	table{
 		position: absolute;
 		width: 90%;
-		top:100px;
+		top:15px;
 		left: 5%;
 		tr{
 			th{
@@ -2368,7 +2436,7 @@ table.checkout-sum{
 			td{
 				textarea{
 					width: 100%;
-					height: 90px;
+					height: 70px;
 					border:none;
 					background-color: rgba(236,236,237,0.6);
 					border:1px solid rgba(210,210,210,0.6);
@@ -2386,6 +2454,7 @@ table.checkout-sum{
 	margin-bottom: 15px;
 	.avartar-child{
 		margin-bottom: 15px;
+		height: 225px;
 		figure{
 			width: 100%;
 			height: 165px;
@@ -2406,7 +2475,8 @@ table.checkout-sum{
 				}
 				&:last-child{
 					td{
-						text-align: right;
+						/* text-align: right; */
+						text-align: center;
 						color: #cbcdce;
 						font-size: 20px;
 						span{
@@ -3607,5 +3677,73 @@ table.addcomment{
 				
 			}
 		}
+	}
+}
+.comm{
+	margin-top: 30px;
+}
+.comm-tb-top{
+	border-collapse:collapse;
+	margin-top: 15px;
+	tr{
+		td{
+			border: 1px solid #4a4a4a;
+		}
+		th{
+			border: 1px solid #4a4a4a;
+			width: 50%;
+		}
+		&:last-child{
+			td{
+				border: 1px solid #4a4a4a !important;
+			}
+			th{
+				border: 1px solid #4a4a4a !important;
+			}
+		}
+	}
+}
+.comm-tb-body{
+	margin-top: 15px;
+	margin-bottom: 15px;
+	clear: both;
+	width: 100%;
+	tr{
+		th{
+			&.title{
+				width: 50%;
+			}
+			&.date{
+				width: 25%;
+			}
+		}
+		td{
+			border-bottom: 1px solid #4a4a4a !important;
+			&.title{
+				width: 50%;
+			}
+			&.date{
+				width: 25%;
+			}
+			input[type="date"]{
+				width: 80px;
+				height: 30px;
+				border-radius: 5px;
+				border:none;
+			}
+		}
+		
+	}
+}
+.project-tb-wrapper{
+	margin-left: -5px;
+	margin-right: -5px;
+	margin-top: 15px;
+	.project-tb{
+		width: 50%;
+		padding-left: 5px;
+		padding-right: 5px;
+		display: inline;
+		float: left;
 	}
 }
